@@ -1,6 +1,6 @@
 # ft_transcendence
 
-A website for chatting and playing pong matches against other users. Completed by @hfadyl, @0xJoroh , and @fsarbout .
+A website for chatting and playing pong matches against other users. Completed by [hfadyl](https://github.com/hfadyl), [mait-si-](https://github.com/0xJoroh) , and [fsarbout](https://github.com/fsarbout) .
 
 ## Key Features:
 
