@@ -34,7 +34,7 @@ git clone https://github.com/hfadyl/Transcendence-.git
 cd Transcendence-
 ```
 
--Do Not Forgot to add client Id and secret of your 42 app, and chnage your to your machine IP in .env
+- Do Not Forgot to add client Id and secret of your 42 app, and chnage your to your machine IP in .env
 
 - Run the docker-compose command to start the application:
 
