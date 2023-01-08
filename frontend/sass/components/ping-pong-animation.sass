@@ -1,0 +1,141 @@
+.spinner-loader
+    position: absolute
+    top: 50%
+    left: 50%
+    text-align: center
+    transform: translate(-50%, -50%)
+    svg
+        display: initial
+
+    .ball-container
+        width: 40px
+        transform: translate(130px, -140px)
+
+    .ball
+        width: 40px
+        transform-origin: bottom
+        animation: bounce 500ms infinite alternate cubic-bezier(0.35, 0.50, 0.65, 0.50)
+
+        circle
+            fill: #FFF
+
+    .raquet
+        transform-origin: bottom
+        width: 85px
+        height: 142px
+
+        #sor-1
+            fill: rgba(0, 0, 0, 0.2)
+            animation: shadow 500ms infinite 500ms alternate cubic-bezier(0.35, 0.50, 0.65, 0.50)
+
+        #sor-2
+            fill: rgba(0, 0, 0, 0.2)
+            animation: shadow 500ms infinite alternate cubic-bezier(0.35, 0.50, 0.65, 0.50)
+
+        &#r-1
+            transform: translateX(70px) rotateZ(45deg)
+            animation: hit-1 1000ms infinite 300ms ease-in-out
+
+        &#r-2
+            transform: translateX(-70px) rotateZ(-45deg)
+            animation: hit-2 1000ms infinite -200ms ease-in-out
+
+        .front
+            fill: #6647BF
+
+        .middle
+            fill: #43FF83
+
+        .back
+            fill: #BA68C8
+
+        .handle
+            &.outer
+                fill: #a8712a
+
+            &.inner
+                fill: #e0973e
+
+    .shadow
+        transform: translateY(-150px)
+        -webkit-filter: blur(2px)
+
+        ellipse
+            fill: rgba(0, 0, 0, 0.1)
+
+        #sr-1,
+        #sr-2,
+        #sb
+            transform-origin: center
+
+        #sr-1
+            animation: grow 1000ms infinite -200ms ease-in-out
+
+        #sr-2
+            animation: grow 1000ms infinite 300ms ease-in-out
+
+        #sb
+            animation: swing 500ms infinite alternate cubic-bezier(0.35, 0.50, 0.65, 0.50)
+
+@keyframes bounce
+    0%
+        transform: rotateZ(45deg)
+
+    100%
+        transform: rotateZ(-45deg)
+
+@keyframes swing
+    0%
+        opacity: 0
+        transform: translateX(70px) scale(1.2)
+
+    25%,
+    75%
+        opacity: 0
+
+    50%
+        opacity: 1
+        transform: translateX(0px) scale(0.9)
+
+    100%
+        opacity: 0
+        transform: translateX(-70px) scale(1.2)
+
+@keyframes hit-1
+
+    0%,
+    50%,
+    100%
+        transform: translate(70px, 3px) rotateZ(45deg)
+
+    75%
+        transform: translate(69px, -2px) rotateZ(42deg)
+
+@keyframes hit-2
+
+    0%,
+    50%,
+    100%
+        transform: translate(-70px, 3px) rotateZ(-45deg)
+
+    75%
+        transform: translate(-69px, -2px) rotateZ(-42deg)
+
+@keyframes grow
+
+    0%,
+    50%,
+    100%
+        transform: scale(1)
+
+    75%
+        transform: scale(0.9)
+
+@keyframes shadow
+
+    0%,
+    40%
+        transform: translate(25px, 200px) scale(0.5)
+
+    100%
+        transform: translate(0px, 0px) scale(1)

@@ -1,0 +1,50 @@
+version: '3.7'
+services:
+  postgress_db:
+    image: postgres
+    networks:
+      - database
+    environment:
+      POSTGRES_USER: hfadyl
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: transcendence-db
+    restart: always
+    volumes:
+      - ./backend/database/prod:/var/lib/postgresql/data
+    container_name: postgress_db
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    networks:
+      - database
+    ports:
+      - 8000:8000
+      - 5555:5555 
+    # volumes:
+      # - ./backend/auth:/usr/src/app
+    depends_on:
+      - postgress_db
+      
+    command: sh run.sh
+    container_name: backend
+    # restart: always
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    # networks:
+    #   - database
+    ports:
+      - 3000:3000
+    volumes:
+      - ./frontend:/usr/src/app
+    depends_on:
+      - backend
+    command: sh run.sh
+    container_name: frontend
+    # restart: always
+
+networks:
+  database:
+    driver: bridge

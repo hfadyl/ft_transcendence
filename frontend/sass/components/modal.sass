@@ -1,0 +1,34 @@
+.ReactModal__Overlay
+    z-index: 100
+    background-color: rgb(0 0 0 / 50%) !important
+    backdrop-filter: blur(4px)
+
+.ReactModal__Content
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    background-color: $background-100
+    outline: 1px solid $border
+    border-radius: 5px
+    padding: 40px 30px 20px
+    width: 55vw
+    max-height: 97%
+    max-width: 850px
+    overflow: auto
+    overflow-x: hidden
+    @media (max-width: 992px)
+        min-width: 90%
+    .close
+        position: absolute
+        padding: 0
+        top: 10px
+        right: 10px
+        cursor: pointer
+        svg
+            opacity: .3
+            transition: opacity .2s
+        &:hover
+            svg
+                opacity: 1
+                transition: opacity .2s

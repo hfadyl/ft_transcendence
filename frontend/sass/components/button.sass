@@ -1,0 +1,94 @@
+.btn, button
+    display: inline-flex
+    align-items: center
+    justify-content: center
+    text-align: center
+    border-radius: 5px
+    background-color: $primary
+    color: $text-100
+    padding: 6px 12px
+    border: 1px solid $primary
+    cursor: pointer
+    text-decoration: none
+    vertical-align: middle
+    user-select: none
+    white-space: nowrap
+    gap: 10px
+    span
+        vertical-align: middle
+    &:hover
+        transform: translateY(-2px)
+    &:active
+        transform: translateY(0)
+        transition: transform 100ms ease-in
+    &:focus-within
+        outline: none
+        box-shadow: 0 0 0 2px $text-100
+    &.lg
+        padding: 8px 12px
+    &.secondary
+        background-color: $background-200
+        border-color: $background-200
+        color: $text-300
+        &:hover
+            background-color: $background-300
+            border-color: $background-300
+        &.outline
+            background-color: $background-200
+            border-color: $border
+            &:hover
+                background-color: $primary
+                color: $text-100
+                border-color: $primary
+
+    &.danger
+        background-color: $danger
+        border-color: $danger
+        &.outline
+            background-color: transparent
+            border-color: $text-200
+            color: $text-200
+            &:hover
+                color: $danger
+                border-color: $danger
+    &.none
+        background: none
+        border: none
+        padding: 0
+        transition: none
+        display: inline-block
+        text-align: inherit
+        border-radius: 0
+        white-space: inherit
+        &:hover
+            transform: none
+    &.icon
+        @extend .none
+        background-color: #342E59
+        border-radius: 100px
+        width: 30px
+        height: 30px
+        display: inline-flex
+        align-items: center
+        justify-content: center
+        transition: background-color 300ms ease-in-out
+        user-select: none
+        &:hover
+            transition: background-color 300ms ease-in-out
+            background-color: $border
+        &:active
+            transition: background-color 100ms ease-in
+            background-color: #342E59
+        &:focus-within
+            box-shadow: 0 0 0 2px $border
+        &.primary
+            background-color: $primary
+        &.md
+            width: 40px
+            height: 40px
+    &.disabled, &:disabled, &.disabled:hover, &:disabled:hover
+        cursor: not-allowed
+        user-select: none
+        opacity: 0.5
+        position: relative
+        transform: none

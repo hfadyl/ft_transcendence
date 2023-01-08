@@ -1,0 +1,179 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "linux-musl"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @unique @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  checkID String @unique
+
+  login       String  @unique
+  fullName    String
+  avatarUrl   String
+  firstName   String
+  lastName    String
+  email       String  @unique
+  phonenumber String?
+  country     String?
+
+  twofactor                     Boolean @default(false)
+  twoFactorAuthenticationSecret String
+
+  // status String @default("offline") // online, offline, ongame
+  Wins   Int @default(0) //update on game end
+  Losses Int @default(0) //update on game end
+  // level  Int    @default(0) //update on game end
+  score  Int @default(0) //update on level up
+
+  sendfriendrequest    friendrequest[] @relation("sendfriendrequest")
+  receivefriendrequest friendrequest[] @relation("receivefriendrequest")
+
+  membership membership[]
+  message    message[]
+
+  recv_notif notification[] @relation("recv")
+  send_notif notification[] @relation("send")
+
+  winner       game[]         @relation("winner")
+  loser        game[]         @relation("loser")
+  achievements achievements[]
+}
+
+model achievements {
+  id        String   @id @unique @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  uid  String
+  user User   @relation(fields: [uid], references: [id], onDelete: Cascade)
+
+  number Int
+
+  earned_at DateTime @default(now())
+
+  already_earned Boolean @default(false)
+
+  // @@unique([uid])
+}
+
+model friendrequest {
+  id        String   @id @unique @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  sender   User   @relation("sendfriendrequest", fields: [senderId], references: [id], onDelete: Cascade)
+  senderId String
+
+  receiver   User   @relation("receivefriendrequest", fields: [receiverId], references: [id], onDelete: Cascade)
+  receiverId String
+
+  status String @default("pending") // pending, accepted, declined, blocked
+
+  @@unique([senderId, receiverId])
+}
+
+model membership {
+  id          String   @id @default(uuid())
+  joined_time DateTime @default(now())
+
+  uid  String
+  user User   @relation(fields: [uid], references: [id], onDelete: Cascade)
+
+  rid  String
+  room room   @relation(fields: [rid], references: [id], onDelete: Cascade)
+
+  is_owner Boolean @default(false)
+  is_admin Boolean @default(false)
+
+  is_banned Boolean @default(false)
+
+  is_muted Boolean   @default(false)
+  mute_at  DateTime?
+  duration DateTime?
+
+  unreadMessages Boolean @default(true)
+
+  // @@map("membership")
+
+  @@unique([uid, rid])
+}
+
+model room {
+  id         String   @id @default(uuid())
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  name       String?
+  is_channel Boolean
+  state      String?  @default("public") // private, public, protected
+  password   String?
+
+  lst_msg    String?   @default("")
+  lst_msg_ts DateTime?
+
+  messages   message[]
+  membership membership[]
+
+  // @@map("rooms")
+}
+
+model message {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+
+  User   User?   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId String?
+
+  room   room?   @relation(fields: [roomId], references: [id], onDelete: Cascade)
+  roomId String?
+
+  msg String
+
+  // @@map("messages")
+}
+
+model game {
+  id        String   @id @unique @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  winner      User   @relation("winner", fields: [winnerId], references: [id], onDelete: Cascade)
+  winnerId    String
+  winnerScore Int    @default(0)
+
+  loser      User   @relation("loser", fields: [loserId], references: [id], onDelete: Cascade)
+  loserId    String
+  loserScore Int    @default(0)
+
+  maxViews Int
+
+  // @@unique([winnerId, loserId])
+}
+
+model notification {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+
+  type String // request || message || game
+
+  receiver   User   @relation("recv", fields: [receiverId], references: [id], onDelete: Cascade)
+  receiverId String
+
+  sender   User   @relation("send", fields: [senderId], references: [id], onDelete: Cascade)
+  senderId String
+
+  message String
+  image   String?
+
+  seen Boolean @default(false)
+}

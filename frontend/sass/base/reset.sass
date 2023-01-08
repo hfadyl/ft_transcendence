@@ -1,0 +1,73 @@
+*,
+*::before,
+*::after
+    box-sizing: border-box // Use a more-intuitive box-sizing model.
+
+*
+    margin: 0
+    font: inherit
+
+html,
+body,
+#__next
+    height: 100% // Allow percentage-based heights in the application
+
+html
+    font-size: 100% // Correct text resizing oddly in IE 6/7 when body `font-size` is set using `em` units.
+    -webkit-text-size-adjust: 100% // Prevent iOS text size adjust after orientation change, without disabling user zoom.
+    -ms-text-size-adjust: 100%
+    scroll-behavior: smooth
+
+body
+    line-height: 1.5 // Add accessible line-height
+    -webkit-font-smoothing: antialiased // Improve text rendering
+    overflow-x: hidden
+
+img,
+picture,
+video,
+canvas,
+svg
+    display: block
+    max-width: 100%
+
+input,
+button,
+textarea,
+select
+    font: inherit // Remove built-in form typography styles
+
+#__next
+    isolation: isolate // Create a root stacking context
+
+a,
+a:visited
+    cursor: pointer
+    text-decoration: none
+    display: inline-block
+    transition: color 300ms ease-in-out
+    &:active,
+    &:hover
+        transition: color 300ms ease-in-out
+    &:focus-within
+        outline: none
+        box-shadow: 0 0 0 2px #fff
+
+svg *
+    transition: stroke 300ms ease-in-out, fill 300ms ease-in-out
+    &:hover *
+        transition: stroke 300ms ease-in-out, fill 300ms ease-in-out
+
+button, .btn
+    transition: background-color 300ms ease-in-out, color 300ms ease-in-out, transform 300ms ease-in-out, border-color 300ms ease-in-out
+    &:hover
+        transition: background-color 300ms ease-in-out, color 300ms ease-in-out, transform 300ms ease-in-out, border-color 300ms ease-in-out
+
+ul
+    padding: 0
+li
+    list-style: none
+
+label
+    display: block
+    margin-bottom: 10px

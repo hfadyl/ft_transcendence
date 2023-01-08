@@ -1,0 +1,61 @@
+input
+    background-color: $background-300
+    border: 1px solid $border
+    border-radius: 5px
+    color: $text-100
+    padding: 10px 15px
+    &::placeholder
+        color: $text-300
+    &:focus-within
+        outline: none
+        box-shadow: 0 0 0 2px $text-100
+    &.error
+        border: 1px solid $danger
+    &[type="text"], &[type="email"], &[type="password"], &[type="number"]
+        width: 100%
+    &[type="search"]
+        &::-webkit-search-decoration,
+        &::-webkit-search-cancel-button,
+        &::-webkit-search-results-button,
+        &::-webkit-search-results-decoration
+            -webkit-appearance: none
+            display: none
+
+select
+    background-color: $background-300
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='10' viewBox='0 0 12 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.86724 0.214335L9.08645 7.06244C9.18046 7.21582 9.17146 7.41218 9.06045 7.55578C8.55943 8.2064 8.0514 8.78766 7.62438 9.17549C7.62438 9.17549 7.28236 9.50959 7.06535 9.65418C6.76934 9.88766 6.38232 10 6.0063 10C5.58428 10 5.18526 9.87691 4.86624 9.63171C4.80924 9.57602 4.55823 9.36403 4.35322 9.16377C3.07715 7.99539 0.969048 4.94549 0.330016 3.34141C0.227011 3.10793 0.0120006 2.48466 0 2.16131C0 1.84967 0.0680034 1.54879 0.217011 1.25962C0.422021 0.90403 0.740037 0.625612 1.11706 0.469307C1.37907 0.368686 2.16511 0.213358 2.18811 0.213358C2.74914 0.112736 3.53718 0.0375146 4.45722 0.00039219C4.62223 -0.00644615 4.78224 0.0765909 4.86724 0.214335Z' fill='%23EDE9F9'/%3E%3Cpath opacity='0.4' d='M7.13972 0.672521C6.95271 0.370657 7.19173 -0.00935965 7.55074 0.00529394C8.39279 0.0414395 9.13482 0.103961 9.68685 0.18016C9.69885 0.191883 10.6779 0.347211 11.0089 0.525985C11.6239 0.837618 12 1.44916 12 2.10662V2.16133C11.989 2.5853 11.6129 3.48699 11.5899 3.48699C11.4009 3.94125 11.0809 4.53423 10.6959 5.17215C10.5219 5.45936 10.0949 5.4662 9.91786 5.17899L7.13972 0.672521Z' fill='%23EDE9F9'/%3E%3C/svg%3E%0A")
+    background-repeat: no-repeat
+    background-position-x: 97%
+    background-position-y: 50%
+    border: 1px solid $border
+    border-radius: 5px
+    color: $text-100
+    padding: 10px 15px
+    width: 100%
+    -moz-appearance: none
+    -webkit-appearance: none
+    appearance: none
+    &:focus-within
+        outline: none
+        box-shadow: 0 0 0 2px $text-100
+    &.error
+        border: 1px solid $danger
+
+input[type="checkbox"]
+    display: none
+    &:checked + label
+        .checkbox
+            background-color: var(--primary)
+            svg
+                opacity: 1
+.checkbox
+    width: 18px
+    height: 18px
+    border-radius: 5px
+    background-color: var(--background-300)
+    border: 1px solid $border
+    display: flex
+    align-items: center
+    justify-content: center
+    svg
+        opacity: 0

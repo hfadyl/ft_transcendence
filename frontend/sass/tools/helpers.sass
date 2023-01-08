@@ -1,0 +1,55 @@
+.container,
+.container-fluid,
+.container-xxl,
+.container-xl,
+.container-lg,
+.container-md,
+.container-sm
+    width: 100%
+    padding-right: var(--bs-gutter-x, 0.75rem)
+    padding-left: var(--bs-gutter-x, 0.75rem)
+    margin-right: auto
+    margin-left: auto
+
+@media (min-width: 576px)
+.container-sm, .container
+    max-width: 540px
+
+@media (min-width: 768px)
+.container-md, .container-sm, .container
+    max-width: 720px
+
+@media (min-width: 992px)
+.container-lg, .container-md, .container-sm, .container
+    max-width: 960px
+
+@media (min-width: 1200px)
+.container-xl, .container-lg, .container-md, .container-sm, .container
+    max-width: 1140px
+
+@media (min-width: 1400px)
+.container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container
+    max-width: 1320px
+
+#nprogress .bar
+    background-color: $primary !important
+
+.friend-request-toast
+    margin: 0
+    padding-left: 10px
+    padding-right: 10px
+    background-color: $background-200
+    color: $text-100
+
+.toast
+    padding: 0
+    --toastify-color-light: $background-200
+
+.no-content
+    font-size: 300%
+    text-transform: uppercase
+    font-weight: bold
+    color: var(--text-300)
+    border: 7px solid
+    padding: 40px 20px
+    text-align: center
