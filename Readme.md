@@ -1,6 +1,6 @@
 # ft_transcendence
 
-A website for chatting and playing pong matches against other users. Completed by [hfadyl](https://github.com/hfadyl), [mait-si-](https://github.com/0xJoroh) , and [fsarbout](https://github.com/fsarbout) .
+A website for chatting and playing pong matches against other users. Completed by [hfadyl](https://github.com/hfadyl), [mait-si-](https://github.com/0xJoroh), [fsarbout](https://github.com/fsarbout) .
 
 ## Key Features:
 
@@ -12,13 +12,12 @@ A website for chatting and playing pong matches against other users. Completed b
 - Ability to add other users as friends and view their current status
 - Stats tracking, including victories, losses, and other stats
 
-## Technical Requirements:
+## Technologies Used:
 
-- TypeScript programming language
-- NextJS frontend framework
-- NestJS backend framework
-- PostgreSQL database
-- Docker-compose for application management
+. Frontend: Next.js
+. Backend: Nest.js
+. Database: PostgreSQL
+. Containerization: Docker
 
 ## Security Concerns:
 
@@ -26,7 +25,7 @@ A website for chatting and playing pong matches against other users. Completed b
 - The website must be protected against SQL injections
 - Server-side validation must be implemented for forms and user input
 
-## How to Test:
+## Getting Started:
 
 - Clone the repository and navigate to the project directory:
 
