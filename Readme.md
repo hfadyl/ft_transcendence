@@ -23,7 +23,7 @@ Made by [hfadyl](https://github.com/hfadyl), [mait-si-](https://github.com/0xJor
 ## Conclusion:
 
 ft_transcendence is a fun and interactive way to play pong and chat with other users. We hope you enjoy using it as much as we enjoyed building it!
-If you have any questions or issues, please feel free to reach out to us on GitHub or contact us on any of this linkedin accounts: [hfadyl](https://www.linkedin.com/in/hicham-fadyl/), [mait-si-](https://www.linkedin.com/in/0x10000/), [fsarbout](https://www.linkedin.com/in/fatima-zahra-sarbout/)
+If you have any questions or issues, please feel free to reach out to us on GitHub or contact us on any of this linkedin accounts: [hfadyl](https://www.linkedin.com/in/hicham-fadyl-6058b5198/), [mait-si-](https://www.linkedin.com/in/0x10000/), [fsarbout](https://www.linkedin.com/in/fatima-zahra-sarbout/)
 
 ## Getting Started:
 
