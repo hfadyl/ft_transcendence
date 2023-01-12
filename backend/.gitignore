@@ -16,7 +16,6 @@ database
 # OS
 .DS_Store
 file.txt
-prisma/migrations
 
 # Tests
 /coverage
