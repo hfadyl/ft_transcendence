@@ -1,6 +1,7 @@
 # ft_transcendence
 
-A website for chatting and playing pong matches against other users. Completed by [hfadyl](https://github.com/hfadyl), [mait-si-](https://github.com/0xJoroh), [fsarbout](https://github.com/fsarbout) .
+Welcome to ft_transcendence, a real-time multiplayer online pong game, chat application, live games and more.
+Made by [hfadyl](https://github.com/hfadyl), [mait-si-](https://github.com/0xJoroh), [fsarbout](https://github.com/fsarbout) .
 
 ## Key Features:
 
@@ -19,11 +20,10 @@ A website for chatting and playing pong matches against other users. Completed b
 . Database: PostgreSQL
 . Containerization: Docker
 
-## Security Concerns:
+## Conclusion:
 
-- All passwords stored in the database must be encrypted
-- The website must be protected against SQL injections
-- Server-side validation must be implemented for forms and user input
+ft_transcendence is a fun and interactive way to play pong and chat with other users. We hope you enjoy using it as much as we enjoyed building it!
+If you have any questions or issues, please feel free to reach out to us on GitHub or contact us on any of this linkedin accounts: - [hfadyl](https://www.linkedin.com/in/hicham-fadyl/) - [mait-si-](https://www.linkedin.com/in/0x10000/) - [fsarbout](https://www.linkedin.com/in/fatima-zahra-sarbout/)
 
 ## Getting Started:
 
