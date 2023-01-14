@@ -1,7 +1,12 @@
 # ft_transcendence
 
 Welcome to ft_transcendence, a real-time multiplayer online pong game, chat application, live games and more.
-Made by [hfadyl](https://github.com/hfadyl), [mait-si-](https://github.com/0xJoroh), [fsarbout](https://github.com/fsarbout).
+
+## Authors:
+
+* [hfadyl](https://github.com/hfadyl)
+* [mait-si-](https://github.com/0xJoroh)
+* [fsarbout](https://github.com/fsarbout)
 
 ## Key Features:
 
