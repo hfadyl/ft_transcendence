@@ -49,8 +49,6 @@ docker-compose up --build
 
 ## Screenshots
 
-![image](./screenshots/Login.png)
-
 ![image](./screenshots/Enter%20username.png)
 
 ![image](./screenshots/Home.png)
